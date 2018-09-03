@@ -3,9 +3,9 @@ apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':annotation')
     implementation 'com.google.auto.service:auto-service:1.0-rc2'
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    compile 'com.google.code.gson:gson:2.8.5'
+    implementation project(':dappsdk-annotation')
 }
 
 sourceCompatibility = "1.7"
@@ -18,8 +18,8 @@ publish {
     repoName = 'android'//Repository名
     groupId = 'io.starteos'//包名（不要项目名）
     uploadName = 'dappsdk'
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.0.1'//版本号
     desc = 'A Library For DAPP'//描述，不重要
-    website = 'https://www.starteos.io'//网站
+    website = 'https://github.com/michaellee123/dappsdk'//网站
     licences = ['Apache-2.0']
 }
