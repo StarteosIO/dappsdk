@@ -1,7 +1,7 @@
 # DAPP SDK
 ## 引用
 ```gradle
-implementation 'io.starteos:dappsdk:1.0.2'
+implementation 'io.starteos:dappsdk-lib:1.0.2'
 implementation 'io.starteos:dappsdk-annotation:1.0.2'
 annotationProcessor 'io.starteos:dappsdk-compiler:1.0.2'
 ```
