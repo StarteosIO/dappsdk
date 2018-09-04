@@ -46,6 +46,14 @@ public class DAppBridge {
         return context;
     }
 
+    public void destroy() {
+        for (List<DAppApi> list : namespaces.values()) {
+            for (DAppApi api : list) {
+                api.destroy();
+            }
+        }
+    }
+
     /**
      * 回调到JavaScript的方法
      *

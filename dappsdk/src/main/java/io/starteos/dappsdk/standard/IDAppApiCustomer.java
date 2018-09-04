@@ -10,10 +10,4 @@ public interface IDAppApiCustomer {
      */
     void getCurrentWalletType(Request request);
 
-    /**
-     * 获取当前账户名
-     *
-     * @param request
-     */
-    void getCurrentWalletAccount(Request request);
 }

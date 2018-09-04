@@ -3,15 +3,26 @@ package io.starteos.dappsdk;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class DAppApi {
+public abstract class DAppApi {
 
     protected DAppBridge bridge;
+
+    private boolean isDestroy = false;
 
     public DAppApi(DAppBridge bridge) {
         this.bridge = bridge;
     }
 
+    void destroy() {
+        isDestroy = true;
+    }
+
+    protected abstract void onDestroy();
+
     public boolean invoke(Request request) {
+        if (isDestroy) {
+            return false;
+        }
         String methodName = request.getFunction();
         Class clazz = getClass();
         try {
