@@ -36,7 +36,7 @@ dependencies {
 
 //添加
 publish {
-    artifactId = 'dappsdk'//项目名称
+    artifactId = 'dappsdk-lib'//项目名称
     userOrg = 'antichristm'//Organizations名
     repoName = 'android'//Repository名
     groupId = 'io.starteos'//包名（不要项目名）
