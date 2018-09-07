@@ -76,4 +76,6 @@ public class DAppApiCustomer extends DAppApi implements IDAppApiCustomer{
     response.putData("name", "Michael Lee");
     response.putData("age", 23);
     bridge.callback(request, response);
+    //注意：Response中传入的内容在Response的toString时，
+    //返回的内容中不能存在[\"]，只能是["]，否则JavaScript可能会无法收到回调
 ```
