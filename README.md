@@ -1,9 +1,9 @@
 # DAPP SDK
 ## 引用
 ```gradle
-implementation 'io.starteos:dappsdk-lib:1.0.2'
-implementation 'io.starteos:dappsdk-annotation:1.0.2'
-annotationProcessor 'io.starteos:dappsdk-compiler:1.0.2'
+implementation 'io.starteos:dappsdk-lib:1.0.4'
+implementation 'io.starteos:dappsdk-annotation:1.0.4'
+annotationProcessor 'io.starteos:dappsdk-compiler:1.0.4'
 ```
 ## 使用
 实例化一个DAppBridge对象，将当前context和webView传入即可

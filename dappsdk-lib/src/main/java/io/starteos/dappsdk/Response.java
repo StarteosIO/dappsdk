@@ -58,11 +58,15 @@ public class Response {
         this.data = data;
     }
 
-    public synchronized void putData(String key, Object value) throws JSONException {
+    public synchronized void putData(String key, Object value) {
         if (data != null) {
             throw new IllegalStateException("must be use only one of Object's data or JSONObject's data");
         }
-        dataJson.put(key, value);
+        try {
+            dataJson.put(key, value);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
