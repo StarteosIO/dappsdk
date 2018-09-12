@@ -74,11 +74,15 @@
 namespace: `system`
 #### 获取Native SDK信息
 **function:** `getSdkInfo`
+
 **params:** `null`
+
 **output:**
-key | value | remark
---- | --- | ---
-version | String | 版本号
+
+| key | value | remark | 
+| --- | --- | --- |
+| version | String | 版本号 | 
+
 ```json
 {
 	"code": 10000,
