@@ -5,7 +5,7 @@ import io.starteos.dappsdk.Request;
 public interface IDAppApiSystem {
 
     /**
-     * 获取Native SDK信息
+     * 获取Native SDK信息，返回DAppBridge中的getSdkVersion即可
      *
      * @param request
      */

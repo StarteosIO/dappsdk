@@ -40,7 +40,7 @@ ext {
     repoName = 'android'//Repository名
     groupId = 'io.starteos'//包名（不要项目名）
     uploadName = 'dappsdk'
-    publishVersion = '1.0.4'//版本号
+    publishVersion = '1.0.5'//版本号
     desc = 'A Library For DAPP'//描述，不重要
     website = 'https://www.starteos.io'//网站
     licences = ['Apache-2.0']

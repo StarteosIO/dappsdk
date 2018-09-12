@@ -60,11 +60,4 @@ public interface IDAppApiGUI {
      */
     void scanQRCode(Request request);
 
-    /**
-     * 分享
-     *
-     * @param request
-     */
-    void share(Request request);
-
 }

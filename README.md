@@ -1,9 +1,10 @@
 # DAPP SDK
 ## 引用
 ```gradle
-implementation 'io.starteos:dappsdk-lib:1.0.4'
-implementation 'io.starteos:dappsdk-annotation:1.0.4'
-annotationProcessor 'io.starteos:dappsdk-compiler:1.0.4'
+implementation 'io.starteos:dappsdk-lib:1.0.5'
+implementation 'io.starteos:dappsdk-annotation:1.0.5'
+annotationProcessor 'io.starteos:dappsdk-compiler:1.0.5'
+// kapt 'io.starteos:dappsdk-compiler:1.0.5'
 ```
 ## 使用
 实例化一个DAppBridge对象，将当前context和webView传入即可
@@ -79,3 +80,5 @@ public class DAppApiCustomer extends DAppApi implements IDAppApiCustomer{
     //注意：Response中传入的内容在Response的toString时，
     //返回的内容中不能存在[\"]，只能是["]，否则JavaScript可能会无法收到回调
 ```
+## 数据
+按照starteos dapp sdk api document中格式返回

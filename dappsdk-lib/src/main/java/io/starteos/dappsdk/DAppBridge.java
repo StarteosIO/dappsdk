@@ -2,7 +2,10 @@ package io.starteos.dappsdk;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
@@ -146,6 +149,10 @@ public class DAppBridge {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getSdkVersion() {
+        return "1.0.5";
     }
 
 }
