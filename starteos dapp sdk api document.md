@@ -74,7 +74,9 @@
 namespace: `system`
 #### 获取Native SDK信息
 **function:** `getSdkInfo`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -92,7 +94,9 @@ version | String | 版本号
 ```
 #### 获取当前语言设置
 **function:** `getLanguageSetting`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -110,7 +114,9 @@ languageSetting | String | 语言设置(zh,en)
 ```
 #### 获取当前显示币种
 **function:** `getSymbol`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -130,6 +136,7 @@ symbol | String | 币种(USD,CNY)
 namespace: `gui`
 #### 全屏切换
 **function:** `changeFullScreen`
+
 **params:**
 
 key | value | remark
@@ -147,6 +154,7 @@ fullScreen | Boolean | 是否全屏
 ```
 #### 更改状态栏显示
 **function:** `changeStatusBar`
+
 **params:**
 
 key | value | remark
@@ -167,6 +175,7 @@ canGoBack | Boolean | 是否能够返回上一级（并且显示返回按钮）
 ```
 #### Toast
 **function:** `showToast`
+
 **params:**
 
 key | value | remark
@@ -185,6 +194,7 @@ delay | Integer | 显示时长（毫秒）
 ```
 #### Alert
 **function:** `showAlert`
+
 **params:**
 
 key | value | remark
@@ -210,6 +220,7 @@ clicked | Integer | 接收到回调时，代表用户按下了按钮
 ```
 #### Dialog
 **function:** `showDialog`
+
 **params:**
 
 key | value | remark
@@ -236,6 +247,7 @@ clicked | Integer | 接收到回调时，代表用户按下了按钮，0代表�
 ```
 #### 复制到剪切板
 **function:** `setClipboard`
+
 **params:**
 
 key | value | remark
@@ -253,7 +265,9 @@ data | String | 复制的内容
 ```
 #### 扫描二维码
 **function:** `scanQRCode`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -273,7 +287,9 @@ result | String | 扫描到的内容
 namespace: `customer`
 #### 获取当前钱包类型
 **function:** `getCurrentWalletType`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -300,7 +316,9 @@ walletType | String | 钱包类型(EOS,ETH)
 namespace: `eos`
 #### 获取当前账户
 **function:** `getCurrentWalletAccount`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -326,6 +344,7 @@ address | String | 公钥
  
 #### 获取当前账户余额
 **function:** `getCurrentBalance`
+
 **params:**
 
 key | value | remark
@@ -362,7 +381,9 @@ symbol | String | 单位
  
 #### 获取当前账户信息
 **function:** `getCurrentAccountInfo`
+
 **params:** `null`
+
 **output:** `链上返回的原始数据`
 ```json
 {
@@ -447,7 +468,9 @@ symbol | String | 单位
  
 #### 获取账户列表
 **function:** `getWalletAccounts`
+
 **params:** `null`
+
 **output:**
 
 key | value | remark
@@ -484,6 +507,7 @@ address | String | 公钥
  
 #### 获取余额
 **function:** `getBalance`
+
 **params:**
 
 key | value | remark
@@ -521,6 +545,7 @@ symbol | String | 单位
  
 #### 获取账户信息
 **function:** `getAccountInfo`
+
 **params:**
 
 key | value | remark
@@ -534,6 +559,7 @@ account | String | 账户名
  -10006 | 网络错误
  
 **output:** `链上返回的原始数据`
+
 ```json
 {
 	"code": 10000,
@@ -611,6 +637,7 @@ account | String | 账户名
 ```
 #### 转账
 **function:** `transfer`
+
 **params:**
 
 key | value | remark
@@ -649,6 +676,7 @@ transactionId | String | 交易ID
  
 #### 获取交易记录
 **function:** `getTransactionRecord`
+
 **params:**
 
 key | value | remark
