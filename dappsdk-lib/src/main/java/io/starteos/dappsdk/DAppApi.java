@@ -15,6 +15,7 @@ public abstract class DAppApi {
 
     void destroy() {
         isDestroy = true;
+        onDestroy();
     }
 
     protected abstract void onDestroy();
