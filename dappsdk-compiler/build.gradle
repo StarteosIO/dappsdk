@@ -5,7 +5,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.google.auto.service:auto-service:1.0-rc2'
     compile 'com.google.code.gson:gson:2.8.5'
-    compileOnly project(':dappsdk-annotation')
+    compile project(':dappsdk-annotation')
 }
 
 sourceCompatibility = "1.7"
