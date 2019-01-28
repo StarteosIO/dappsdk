@@ -330,7 +330,7 @@ status | Integer | 状态(-1：硬件不支持，0：未开启，1：开启)
 	"code": 10000,
 	"message": "success",
 	"data": {
-		"walletType": "EOS"
+		"status": 1
 	}
 }
 
