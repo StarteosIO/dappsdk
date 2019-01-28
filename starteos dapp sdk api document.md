@@ -1014,4 +1014,4 @@ namespace: `eth`
 ### _BOS_
 namespace: `bos`
 
-**所有function与[_EOS_](#_eos_)一致，仅仅namespace不同，通过不同的namespace调用BOS的方法。**
+**所有function与[_EOS_](#eos)一致，仅仅namespace不同，通过不同的namespace调用BOS的方法。**
