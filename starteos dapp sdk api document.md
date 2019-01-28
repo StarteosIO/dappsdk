@@ -28,9 +28,10 @@
             - [获取余额](#获取余额)
             - [获取账户信息](#获取账户信息)
             - [转账](#转账)
-            - [获取交易记录](#获取交易记录)
+            - [智能合约](#智能合约)
         - [_ETH_](#_eth_)
             - [转账](#转账-1)
+        - [_BOS_](#_bos_)
 
 
 ---
@@ -294,7 +295,7 @@ namespace: `customer`
 
 key | value | remark
 --- | --- | ---
-walletType | String | 钱包类型(EOS,ETH)
+walletType | String | 钱包类型(EOS,ETH,BOS)
 
 ```json
 {
@@ -312,6 +313,28 @@ walletType | String | 钱包类型(EOS,ETH)
  --- | ---
  -10005 | 当前没有钱包
  
+#### 检查当前是否开启指纹支付
+**function:** `checkFingerprintPayment`
+
+**params:** `null`
+
+**output:**
+
+key | value | remark
+--- | --- | ---
+status | Integer | 状态(-1：硬件不支持，0：未开启，1：开启)
+
+```json
+{
+	"code": 10000,
+	"message": "success",
+	"data": {
+		"walletType": "EOS"
+	}
+}
+
+```
+
 ### _EOS_
 namespace: `eos`
 #### 获取当前账户
@@ -651,18 +674,141 @@ contract | String | 合约地址
 memo | String | 备注
 hint | String | 提示，仅用于展示给用户
 
-**output:**
-
-key | value | remark
---- | --- | ---
-transactionId | String | 交易ID
+**output:** `链上返回的原始数据`
 
 ```json
 {
 	"code": 10000,
 	"message": "success",
 	"data": {
-		"transactionId": "740298b6a4430ad902b6791fe1d1ee15a2f236e36d16e9b99cf120c7a0fd15d2"
+		"transaction_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+		"processed": {
+			"id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+			"block_num": 1898103,
+			"block_time": "2019-01-28T12:15:14.500",
+			"producer_block_id": null,
+			"receipt": {
+				"status": "executed",
+				"cpu_usage_us": 289,
+				"net_usage_words": 17
+			},
+			"elapsed": 289,
+			"net_usage": 136,
+			"scheduled": false,
+			"action_traces": [{
+				"receipt": {
+					"receiver": "eosio.token",
+					"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+					"global_sequence": 26427785,
+					"recv_sequence": 4276126,
+					"auth_sequence": [
+						["ubsucokgxwdu", 35]
+					],
+					"code_sequence": 1,
+					"abi_sequence": 1
+				},
+				"act": {
+					"account": "eosio.token",
+					"name": "transfer",
+					"authorization": [{
+						"actor": "ubsucokgxwdu",
+						"permission": "owner"
+					}],
+					"data": {
+						"from": "ubsucokgxwdu",
+						"to": "atqfihsqouwi",
+						"quantity": "0.0001 BOS",
+						"memo": "test"
+					},
+					"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+				},
+				"context_free": false,
+				"elapsed": 111,
+				"console": "",
+				"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+				"block_num": 1898103,
+				"block_time": "2019-01-28T12:15:14.500",
+				"producer_block_id": null,
+				"account_ram_deltas": [],
+				"except": null,
+				"inline_traces": [{
+					"receipt": {
+						"receiver": "ubsucokgxwdu",
+						"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+						"global_sequence": 26427786,
+						"recv_sequence": 13,
+						"auth_sequence": [
+							["ubsucokgxwdu", 36]
+						],
+						"code_sequence": 1,
+						"abi_sequence": 1
+					},
+					"act": {
+						"account": "eosio.token",
+						"name": "transfer",
+						"authorization": [{
+							"actor": "ubsucokgxwdu",
+							"permission": "owner"
+						}],
+						"data": {
+							"from": "ubsucokgxwdu",
+							"to": "atqfihsqouwi",
+							"quantity": "0.0001 BOS",
+							"memo": "test"
+						},
+						"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+					},
+					"context_free": false,
+					"elapsed": 4,
+					"console": "",
+					"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+					"block_num": 1898103,
+					"block_time": "2019-01-28T12:15:14.500",
+					"producer_block_id": null,
+					"account_ram_deltas": [],
+					"except": null,
+					"inline_traces": []
+				}, {
+					"receipt": {
+						"receiver": "atqfihsqouwi",
+						"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+						"global_sequence": 26427787,
+						"recv_sequence": 12,
+						"auth_sequence": [
+							["ubsucokgxwdu", 37]
+						],
+						"code_sequence": 1,
+						"abi_sequence": 1
+					},
+					"act": {
+						"account": "eosio.token",
+						"name": "transfer",
+						"authorization": [{
+							"actor": "ubsucokgxwdu",
+							"permission": "owner"
+						}],
+						"data": {
+							"from": "ubsucokgxwdu",
+							"to": "atqfihsqouwi",
+							"quantity": "0.0001 BOS",
+							"memo": "test"
+						},
+						"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+					},
+					"context_free": false,
+					"elapsed": 6,
+					"console": "",
+					"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+					"block_num": 1898103,
+					"block_time": "2019-01-28T12:15:14.500",
+					"producer_block_id": null,
+					"account_ram_deltas": [],
+					"except": null,
+					"inline_traces": []
+				}]
+			}],
+			"except": null
+		}
 	}
 }
 ```
@@ -674,20 +820,198 @@ transactionId | String | 交易ID
  -10007 | 交易失败 |
  -10008 | 没有找到转出的钱包 |
  
-#### 获取交易记录
-**function:** `getTransactionRecord`
+#### 智能合约
+**function:** `action`
 
 **params:**
 
 key | value | remark
 --- | --- | ---
-account | String | 账户名
-tokenName | String | 代币名称
+accountName | String | 调用账户名
+accountAddress | String | 调用账户公钥
+hint | String | action说明，展示给用户
+actions | JsonArray | 合约列表
+
+**action**
+
+key | value | remark
+--- | --- | ---
+contractName | String | 合约账户
+actionName | String | 方法名
 contract | String | 合约地址
- \ | \ | 翻页方式待定
- 
+data | JsonObject | abi_json_to_bin之前的数据，即合约参数，键值对
+
+`参数示例`
+```json
+ {
+	"accountName": "nidjfpdhvmxt",
+	"accountAddress": "EOS6qsKUyr8Em5QHLUEhkoX1YjbJeWMSDf4fprZJwAgVMaFbkVJeV",
+	"hint": "action说明，展示给用户",
+	"actions": [{
+		"contractName": "eosio.token",
+		"actionName": "transfer",
+		"data": {
+			"from": "nidjfpdhvmxt",
+			"to": "atqfihsqouwi",
+			"quantity": "0.0001 BOS",
+			"memo": "TEST"
+		}
+	}]
+}
+```
+
 **output:** `链上返回的原始数据`
+
+```json
+{
+	"code": 10000,
+	"message": "success",
+	"data": {
+		"transaction_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+		"processed": {
+			"id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+			"block_num": 1898103,
+			"block_time": "2019-01-28T12:15:14.500",
+			"producer_block_id": null,
+			"receipt": {
+				"status": "executed",
+				"cpu_usage_us": 289,
+				"net_usage_words": 17
+			},
+			"elapsed": 289,
+			"net_usage": 136,
+			"scheduled": false,
+			"action_traces": [{
+				"receipt": {
+					"receiver": "eosio.token",
+					"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+					"global_sequence": 26427785,
+					"recv_sequence": 4276126,
+					"auth_sequence": [
+						["ubsucokgxwdu", 35]
+					],
+					"code_sequence": 1,
+					"abi_sequence": 1
+				},
+				"act": {
+					"account": "eosio.token",
+					"name": "transfer",
+					"authorization": [{
+						"actor": "ubsucokgxwdu",
+						"permission": "owner"
+					}],
+					"data": {
+						"from": "ubsucokgxwdu",
+						"to": "atqfihsqouwi",
+						"quantity": "0.0001 BOS",
+						"memo": "test"
+					},
+					"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+				},
+				"context_free": false,
+				"elapsed": 111,
+				"console": "",
+				"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+				"block_num": 1898103,
+				"block_time": "2019-01-28T12:15:14.500",
+				"producer_block_id": null,
+				"account_ram_deltas": [],
+				"except": null,
+				"inline_traces": [{
+					"receipt": {
+						"receiver": "ubsucokgxwdu",
+						"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+						"global_sequence": 26427786,
+						"recv_sequence": 13,
+						"auth_sequence": [
+							["ubsucokgxwdu", 36]
+						],
+						"code_sequence": 1,
+						"abi_sequence": 1
+					},
+					"act": {
+						"account": "eosio.token",
+						"name": "transfer",
+						"authorization": [{
+							"actor": "ubsucokgxwdu",
+							"permission": "owner"
+						}],
+						"data": {
+							"from": "ubsucokgxwdu",
+							"to": "atqfihsqouwi",
+							"quantity": "0.0001 BOS",
+							"memo": "test"
+						},
+						"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+					},
+					"context_free": false,
+					"elapsed": 4,
+					"console": "",
+					"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+					"block_num": 1898103,
+					"block_time": "2019-01-28T12:15:14.500",
+					"producer_block_id": null,
+					"account_ram_deltas": [],
+					"except": null,
+					"inline_traces": []
+				}, {
+					"receipt": {
+						"receiver": "atqfihsqouwi",
+						"act_digest": "720f6be2941c20bf7b24110c2437441f27380a1f65dbe6d4652b15678c40c796",
+						"global_sequence": 26427787,
+						"recv_sequence": 12,
+						"auth_sequence": [
+							["ubsucokgxwdu", 37]
+						],
+						"code_sequence": 1,
+						"abi_sequence": 1
+					},
+					"act": {
+						"account": "eosio.token",
+						"name": "transfer",
+						"authorization": [{
+							"actor": "ubsucokgxwdu",
+							"permission": "owner"
+						}],
+						"data": {
+							"from": "ubsucokgxwdu",
+							"to": "atqfihsqouwi",
+							"quantity": "0.0001 BOS",
+							"memo": "test"
+						},
+						"hex_data": "a013ef0c52a4f1d1e0b8a61637b76c36010000000000000004424f53000000000474657374"
+					},
+					"context_free": false,
+					"elapsed": 6,
+					"console": "",
+					"trx_id": "0813ca297f1fcd27d8f90f9cbeb9cec2b0a7118a88f66999444fe4056f567bdc",
+					"block_num": 1898103,
+					"block_time": "2019-01-28T12:15:14.500",
+					"producer_block_id": null,
+					"account_ram_deltas": [],
+					"except": null,
+					"inline_traces": []
+				}]
+			}],
+			"except": null
+		}
+	}
+}
+```
+**error:**
+
+ code | remark
+ --- | ---
+ -10006 | 网络错误 |
+ -10007 | 交易失败 |
+ -10008 | 没有找到转出的钱包 |
+ 
 ### _ETH_
 namespace: `eth`
 #### 转账
 `待定`
+ 
+### _BOS_
+namespace: `bos`
+
+**所有function与[_EOS_](#_eos_)一致，仅仅namespace不同，通过不同的namespace调用BOS的方法。**
